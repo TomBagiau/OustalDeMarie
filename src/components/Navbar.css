@@ -1,0 +1,111 @@
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 8vh;
+    background-color: var(--brown-color);
+    font-size: 18px;
+    z-index: 1;
+}
+
+.nav a {
+    color: var(--white-color);
+    display: inline-block;
+}
+
+.nav .hoverline:after {
+    content: '';
+    width: 0px;
+    height: 2.5px;
+    display: block;
+    background: var(--white-color);
+    transition: 300ms;
+}
+
+.nav .hoverline:hover:after {
+    width: 100%;
+}
+
+.logo {
+    width: 150px;
+}
+
+.nav_menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+}
+
+.nav_toggler div {
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: 0.4rem;
+    background: var(--white-color);
+    transition: 0.4s ease-in;
+}
+
+.nav_toggler {
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav_toggler {
+        display: block;
+    }
+
+    .nav_menu {
+        position: fixed;
+        top: 5vh;
+        right: 0;
+        width: 50%;
+        height: 93vh;
+        background-color: var(--brown-color);
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: 0.4s ease-in;
+        display: block;
+    }
+
+    .nav_menu a {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
+    .nav .hoverline:after {
+        /* Masquer l'underline sur les écrans mobiles */
+        display: none;
+    }
+
+    .logo {
+        width: 100px;
+    }
+}
+
+.nav_active {
+    transform: translateX(0);
+}
+
+/* Toggle animation */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    /* transform: rotate(45deg) translate(-7px, -7px); */
+    transform: rotate(45deg) translate(-5px, -5px);
+}

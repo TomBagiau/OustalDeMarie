@@ -1,0 +1,41 @@
+.cardContainer {
+    width: 100%;
+}
+
+.card {
+    margin: 2% 15% 2% 15%;
+}
+
+.card h2 {
+    font-size: 2.5rem
+}
+
+.card p {
+    font-size: 18px;
+}
+
+.card a {
+    margin-top: 2rem;
+    padding: .4rem 1.5rem;
+    font-size: 18px;
+    background-color: var(--green-color);
+    color: #fff;
+    border-radius: 5px;
+    border: 2px solid var(--green-color);
+}
+
+.card a:hover {
+    background: transparent;
+    color: var(--green-color);
+    transition: .3s;
+}
+
+.card p {
+    width: 70%;
+}
+
+@media screen and (max-width: 768px) {
+    .card p {
+        width: 100%;
+    }
+}

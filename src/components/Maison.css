@@ -1,0 +1,81 @@
+.maisonSliderContainer {
+    height: calc(100vh - 8vh);
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.maisonSliderContainer .carousel {
+    width: 55%;
+    margin-left: 5%;
+}
+
+.maisonSliderContainer .txtContainer {
+    width: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconGreen2 {
+    color: var(--green-color-2);
+}
+
+.txtContainer div {
+    font-size: 20px;
+}
+
+.bookButton {
+    background-color: var(--green-color-2);
+    width: 200px;
+}
+
+.HomeDetails {
+    width: 76%;
+}
+
+.detailTitle {
+    color: var(--green-color-2);
+}
+
+.iconGreen {
+    color: var(--brown-color);
+}
+
+.detailPart {
+    margin-bottom: 2.5rem;
+}
+
+#resaform {
+    width: 76%;
+}
+
+#clevWidgetAsideSf-lqzeocwv {
+    border-color: var(--green-color) !important;
+}
+
+.cuC5ivSLPptFCr5tpMC5 {
+    background: var(--green-color) !important;
+    border: 1px solid var(--green-color) !important;
+}
+
+.cuC5ivSLPptFCr5tpMC5:hover {
+    background-color: var(--white-color) !important;
+    color: var(--green-color) !important;
+}
+
+@media screen and (max-width: 768px) {
+    .maisonSliderContainer {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .maisonSliderContainer .carousel {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}

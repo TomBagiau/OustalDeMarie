@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+html {
+    font-family: "Roboto";
+}
+
+.home_image {
+    height: calc(100vh - 8vh);
+    opacity: 0.9;
+}
+
+.home_text {
+    padding: 12rem 0 0 14rem;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    background-color: var(--brown-color);
+}
+
+.cart {
+    background-color: var(--green-color)
+}
+
+.cart img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.homeBaniere {
+    margin-top: 8rem;
+}
+
+.homeBaniere img {
+    opacity: .8;
+}
+
+.banner {
+    height: 42vh;
+    opacity: 0.8;
+}
+
+.reservationTitle {
+    margin-top: 5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.reservationForm {
+    width: 60%;
+}
+
+.reservationForm input:focus,
+.reservationForm textarea:focus {
+    outline: none;
+    border-color: var(--green-color);
+}
+
+.reservationForm button {
+    background-color: var(--green-color);
+    border: 2px solid var(--green-color);
+    color: #fff;
+    transition: .3s;
+}
+
+.reservationForm button:hover {
+    color: var(--green-color);
+    background-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+    .home_text {
+        padding: 0;
+        padding-top: 7rem;
+    }
+
+    .home_text h1 {
+        font-size: 50px;
+    }
+
+    .home_text h2 {
+        font-size: 30px;
+    }
+
+    .reservationForm {
+        width: 90%;
+    }
+}

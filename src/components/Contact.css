@@ -1,0 +1,54 @@
+.contactpart {
+    background: linear-gradient(to top, #f7f7f7, #ffffff);
+}
+
+.contactTitle {
+    font-size: 2.3rem;
+}
+
+section.contact input:focus,
+section.contact textarea:focus {
+    border-color: var(--green-color);
+}
+
+section.contact textarea {
+    height: 200px;
+}
+
+section.contact button {
+    background-color: var(--green-color);
+    border: 2px solid var(--green-color);
+    color: #fff;
+    transition: .3s;
+}
+
+section.contact button:hover {
+    color: var(--green-color);
+    background-color: transparent;
+}
+
+section.contact .conctactInfos a {
+    font-size: 18px;
+}
+
+section.contact .conctactInfos a:hover {
+    transition: .3s;
+    color: var(--green-color);
+}
+
+@media screen and (max-width: 768px) {
+    .contact {
+        width: 90%;
+        margin: 5%;
+        background-color: none;
+    }
+
+    .conctactInfos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .conctactInfos a {
+        margin-top: 1rem;
+    }
+}

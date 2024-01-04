@@ -1,0 +1,23 @@
+footer {
+    padding-top: 1.5rem;
+    background-color: var(--brown-color);
+    color: #fff;
+}
+
+footer a:hover {
+    transition: .3s;
+    color: var(--green-color);
+}
+
+footer .logoFooter {
+    font-size: 1.5rem;
+    transition: .3s;
+}
+
+footer .airbnb:hover {
+    color: #fd5761;
+}
+
+footer .booking:hover {
+    color: #003580;
+}
