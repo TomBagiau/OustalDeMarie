@@ -14,10 +14,10 @@ footer .logoFooter {
     transition: .3s;
 }
 
-footer .airbnb:hover {
-    color: #fd5761;
+footer .logoAirbnb {
+    width: 100px;
 }
 
-footer .booking:hover {
-    color: #003580;
+footer .logoCleVavances {
+    width: 12Opx;
 }

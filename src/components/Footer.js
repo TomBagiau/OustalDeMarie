@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography } from "@material-tailwind/react";
-import { TbBrandAirbnb, TbBrandBooking } from "react-icons/tb";
+import airbnbLogo from '../img/logo_airbnb.png';
+import cleVacancesLogo from '../img/Logo_CleVacances.png';
 import './Footer.css';
 
 export default function Footer() {
@@ -70,11 +71,11 @@ export default function Footer() {
             &copy; {currentYear} Oustal De Marie - tous droits réservés.
           </Typography>
           <div className="flex gap-4 sm:justify-center">
-            <a href="/" target="_blank" className="logoFooter airbnb">
-              <TbBrandAirbnb />
+            <a href="https://www.airbnb.fr/rooms/780387969970820528" target="_blank" rel="noreferrer" className="logoFooter logoAirbnb">
+              <img src={airbnbLogo} alt="Logo Airbnb" className='logo'></img>
             </a>
-            <a href="/" target="_blank" className="logoFooter booking">
-              <TbBrandBooking />
+            <a href="https://www.clevacances.com/fr/locationvacances/midipyrenees/ariege/miglos-3084/loustal_de_marie/65304" target="_blank" rel="noreferrer" className="logoFooter logoCleVavances">
+              <img src={cleVacancesLogo} alt="Logo Cle Vacances" className='logo'></img>
             </a>
           </div>
         </div>
