@@ -11,5 +11,6 @@ import detailsEquipementsInterieur from './detailsEquipementsInterieur'
 import detailsEquipementsExterieur from './detailsEquipementsExterieur'
 import detailsProximite from './detailsProximite'
 import Disponibilite from './disponibilite'
+import Cartes from './cartes'
 
-export const schemaTypes = [imagesMaison, about, detailsLogement, detailsService, detailsEquipementsInterieur, detailsEquipementsExterieur, detailsProximite, activites, Disponibilite, blockContent]
+export const schemaTypes = [Cartes, imagesMaison, about, detailsLogement, detailsService, detailsEquipementsInterieur, detailsEquipementsExterieur, detailsProximite, activites, Disponibilite, blockContent]

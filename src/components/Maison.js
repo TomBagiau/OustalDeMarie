@@ -270,7 +270,6 @@ export default function Maison() {
       </div>
 
       <div ref={reservationRef} id="reserver">
-        {/* <p>test</p> */}
         <div id="resaform" className="appMountPoint-asideBooking mx-auto mt-8 mb-8 p-6" data-hotel_id="36935" data-room_id="65304" data-source="customer"></div>
       </div>
 
