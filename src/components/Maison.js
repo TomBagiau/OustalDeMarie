@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Carousel from "./MaisonSlider";
 import sanityClient from "../client.js";
+import BlockContent from '@sanity/block-content-to-react';
 import { BsFillHouseCheckFill, BsPlusCircle } from "react-icons/bs";
 import { Button } from "@material-tailwind/react";
 import "./Maison.css"
@@ -11,8 +12,7 @@ export default function Maison() {
   const [imagesData, setImagesData] = useState(null);
   const [leLogementData, setLeLogementData] = useState(null);
   const [serivcesData, setSerivcesData] = useState(null);
-  const [equipInterData, setEquipInterData] = useState(null);
-  const [equipExterData, setEquipExterData] = useState(null);
+  const [equipementInterieurData, setEquipementInterieurData] = useState(null);
   const [aproxData, setAproxData] = useState(null);
 
   const reservationRef = useRef(null);
@@ -82,23 +82,12 @@ export default function Maison() {
      */
     sanityClient
     .fetch(
-      `*[_type == "detailsEquipementsInterieur"]{
-        title
+      `*[_type == "equipementsInterieur"]{
+        title,
+        body
       }`
     )
-    .then((data) => setEquipInterData(data))
-    .catch(console.error);
-
-    /**
-     * Sanity Equipements extérieurs
-     */
-    sanityClient
-    .fetch(
-      `*[_type == "detailsEquipementsExterieur"]{
-        title
-      }`
-    )
-    .then((data) => setEquipExterData(data))
+    .then((data) => setEquipementInterieurData(data))
     .catch(console.error);
 
     /**
@@ -205,39 +194,18 @@ export default function Maison() {
 
           <div className="detailPart">
             <h3 className="detailTitle text-2xl font-semibold mb-4">Équipements intérieur</h3>
-              {equipInterData &&
-                equipInterData.reduce((pairs, detail, index) => {
+              {equipementInterieurData &&
+                equipementInterieurData.reduce((pairs, detail, index) => {
                   if (index % 2 === 0) pairs.push([]);
                   pairs[pairs.length - 1].push(detail);
                   return pairs;
                 }, []).map((pair, pairIndex) => (
                   <div key={pairIndex}>
                     <div className="grid grid-cols-2 gap-4">
-                      {pair.map((service, index) => (
-                        <div key={index} className="mb-4 flex items-center">
-                          <BsPlusCircle className="iconGreen text-2xl mr-2" /> {/* Taille de l'icône ajustée à text-2xl */}
-                          <p className="text-lg">{service.title}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-          </div>
-
-          <div className="detailPart">
-            <h3 className="detailTitle text-2xl font-semibold mb-4">Équipements intérieur</h3>
-              {equipExterData &&
-                equipExterData.reduce((pairs, detail, index) => {
-                  if (index % 2 === 0) pairs.push([]);
-                  pairs[pairs.length - 1].push(detail);
-                  return pairs;
-                }, []).map((pair, pairIndex) => (
-                  <div key={pairIndex} className="mb-4">
-                    <div className="grid grid-cols-2 gap-4">
-                      {pair.map((service, index) => (
-                        <div key={index} className="mb-4 flex items-center">
-                          <BsPlusCircle className="iconGreen text-2xl mr-2" /> {/* Taille de l'icône ajustée à text-2xl */}
-                          <p className="text-lg">{service.title}</p>
+                      {pair.map((equipementInterieur, index) => (
+                        <div key={index}>
+                          <p className="font-semibold text-lg">{equipementInterieur.title} :</p>
+                          <BlockContent blocks={equipementInterieur.body} />
                         </div>
                       ))}
                     </div>

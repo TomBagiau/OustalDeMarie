@@ -38,7 +38,7 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
           <Typography variant="h5" className="mb-6">
-            Oustal de Marie
+            L'Oustal de Marie
           </Typography>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {LINKS.map(({ title, items }) => (
@@ -68,7 +68,7 @@ export default function Footer() {
             variant="small"
             className="mb-4 text-center font-normal md:mb-0"
           >
-            &copy; {currentYear} Oustal De Marie - tous droits réservés.
+            &copy; {currentYear} L'Oustal De Marie - tous droits réservés.
           </Typography>
           <div className="flex gap-4 sm:justify-center">
             <a href="https://www.airbnb.fr/rooms/780387969970820528" target="_blank" rel="noreferrer" className="logoFooter logoAirbnb">
