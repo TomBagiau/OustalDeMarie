@@ -27,7 +27,7 @@ export default function Carousel({ slides }) {
         }}
       >
         {slides.map((s) => {
-          return <img src={s} alt="photo Gite en ariege" />;
+          return <img src={s} alt="L'Oustal de Marie - Gite en ariege" />;
         })}
       </div>
 
