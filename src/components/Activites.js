@@ -10,7 +10,7 @@ const Activites = () => {
     // Sanity Activités
     sanityClient
       .fetch(
-        `*[_type == "activites"]{
+        `*[_type == "activites"] | order(date desc){
           mainImage{
               asset->{
                   url

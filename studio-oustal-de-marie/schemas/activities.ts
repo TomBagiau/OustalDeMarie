@@ -22,12 +22,18 @@ export default defineType({
             name: 'description',
             title: 'Description',
             type: 'text',
-            description: 'Ajoutez une description',
+            description: 'Description de l\'activité',
         }),
         defineField({
             name: 'url',
             title: 'Lien',
             type: 'url',
+        }),
+        defineField({
+            name: 'date',
+            title: 'Date publication',
+            type: 'date',
+            description: 'Affichage sur le site : du plus récent au plus vieux'
         }),
     ],
 })
