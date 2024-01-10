@@ -10,6 +10,7 @@ import "./Maison.css"
 export default function Maison() {
 
   const [imagesData, setImagesData] = useState(null);
+  const [descriptionMaison, setDescriptionMaison] = useState(null);
   const [leLogementData, setLeLogementData] = useState(null);
   const [serivcesData, setSerivcesData] = useState(null);
   const [equipementInterieurData, setEquipementInterieurData] = useState(null);
@@ -33,6 +34,12 @@ export default function Maison() {
     // Ajout du script au body du document
     document.body.appendChild(script);
 
+
+    // Sanity description maison (about)
+    sanityClient
+      .fetch(`*[_type == "about"]`)
+      .then((data) => setDescriptionMaison(data))
+      .catch(console.error);
 
     /**
      * Sanity slider
@@ -160,6 +167,13 @@ export default function Maison() {
             <Button className="bookButton" onClick={scrollToReservation}>Réserver</Button>
           </div>
         </div>
+
+        {descriptionMaison &&
+          descriptionMaison.map((text, index) => (
+            <div key={index}>
+              <BlockContent blocks={text.body} />
+            </div>
+          ))}
 
         <div className="HomeDetails mx-auto mt-8 mb-8 p-6 bg-gray-100 rounded-md">
           <h3 className="text-3xl font-semibold mb-8">Détails du Logement</h3>
