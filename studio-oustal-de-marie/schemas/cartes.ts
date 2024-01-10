@@ -2,7 +2,7 @@
 
 export default {
     name: 'carte',
-    title: 'Carte accueil',
+    title: 'Cartes accueil',
     type: 'document',
     fields: [
         {

@@ -48,7 +48,7 @@ export default function Cards() {
         </CardHeader>
         <CardBody>
           <Typography variant="h3" color="blue-gray" className="mb-2">
-            {card.titre} {/* Utilisez card.title au lieu de card.titre */}
+            {card.titre}
           </Typography>
           <Typography>
             {card.description}
