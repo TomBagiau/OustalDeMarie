@@ -72,14 +72,14 @@ export default function Contact() {
                   ))}
               </div>
               
-              <div className="w-full sm:w-2/3 pl-4">
+              <div className="w-2/3 pl-4">
                 <div className="rightPart">
                   <div className="flex flex-col text-center w-full mb-12">
-                     <h1 className="contactTitle font-medium mb-4">
-                       Contactez-Nous
+                    <h1 className="contactTitle font-medium mb-4">
+                      Contactez-Nous
                     </h1>
-
-                    <form onSubmit={handleSubmit} className="emailForm">
+                  </div>
+                  <form onSubmit={handleSubmit} className="emailForm">
                     <div className="flex flex-wrap">
                       <div className="p-2 w-full">
                         <div className="relative">
@@ -165,7 +165,6 @@ export default function Contact() {
                       </div>
                     </div>
                   </form>
-                  </div>
                 </div>
               </div>
             </div>
