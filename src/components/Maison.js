@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import Carousel from "./MaisonSlider";
 import sanityClient from "../client.js";
 import BlockContent from '@sanity/block-content-to-react';
-import { BsFillHouseCheckFill, BsPlusCircle } from "react-icons/bs";
+import { BsFillHouseCheckFill } from "react-icons/bs";
 import { Button } from "@material-tailwind/react";
 import "./Maison.css"
 
@@ -14,6 +14,7 @@ export default function Maison() {
   const [serivcesData, setSerivcesData] = useState(null);
   const [equipementInterieurData, setEquipementInterieurData] = useState(null);
   const [aproxData, setAproxData] = useState(null);
+  const [conditionsParticulieres, setConditionsParticulieres] = useState(null);
 
   const reservationRef = useRef(null);
 
@@ -101,6 +102,18 @@ export default function Maison() {
       }`
     )
     .then((data) => setAproxData(data))
+    .catch(console.error);
+
+    /**
+     * Sanity Conditions particulières
+     */
+    sanityClient
+    .fetch(
+      `*[_type == "conditionsParticulieres"] | order(_createdAt desc){
+        title
+      }`
+    )
+    .then((data) => setConditionsParticulieres(data))
     .catch(console.error);
 
     return () => {
@@ -232,6 +245,26 @@ export default function Maison() {
                   </div>
                 </div>
               ))}
+          </div>
+
+          <div className="detailPart">
+            <h3 className="detailTitle text-2xl font-semibold mb-4">Conditions particulières</h3>
+              {conditionsParticulieres &&
+                conditionsParticulieres.reduce((pairs, detail, index) => {
+                  if (index % 2 === 0) pairs.push([]);
+                  pairs[pairs.length - 1].push(detail);
+                  return pairs;
+                }, []).map((pair, pairIndex) => (
+                  <div key={pairIndex}>
+                    <div className="grid grid-cols-2 gap-4">
+                      {pair.map((service, index) => (
+                        <div key={index} className="mb-4 flex items-center">
+                          <p className="font-semibold text-lg">{service.title}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
           </div>
 
         </div>

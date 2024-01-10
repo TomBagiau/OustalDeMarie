@@ -8,5 +8,6 @@ import detailsProximite from './detailsProximite'
 import Cartes from './cartes'
 import contactText from './contactText'
 import equipementsInterieur from './equipementsInterieur'
+import conditionsParticulieres from './conditionsParticulieres'
 
-export const schemaTypes = [Cartes, imagesMaison, about, detailsLogement, detailsService, equipementsInterieur, detailsProximite, activites, contactText, blockContent]
+export const schemaTypes = [Cartes, imagesMaison, about, detailsLogement, detailsService, equipementsInterieur, detailsProximite, conditionsParticulieres, activites, contactText, blockContent]
