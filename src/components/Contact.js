@@ -62,7 +62,7 @@ export default function Contact() {
       <section className="contact">
         <div className="contactpart">
           <div className="container py-24 mx-auto">
-            <div className="flex mx-4">
+            <div className="contactFormText flex mx-4">
               <div className="leftPart">
                 {contactText &&
                   contactText.map((text, index) => (
@@ -72,14 +72,14 @@ export default function Contact() {
                   ))}
               </div>
               
-              <div className="w-2/3 pl-4">
+              <div className="w-full sm:w-2/3 pl-4">
                 <div className="rightPart">
                   <div className="flex flex-col text-center w-full mb-12">
-                    <h1 className="contactTitle font-medium mb-4">
-                      Contactez-Nous
+                     <h1 className="contactTitle font-medium mb-4">
+                       Contactez-Nous
                     </h1>
-                  </div>
-                  <form onSubmit={handleSubmit} className="emailForm w-4/5">
+
+                    <form onSubmit={handleSubmit} className="emailForm">
                     <div className="flex flex-wrap">
                       <div className="p-2 w-full">
                         <div className="relative">
@@ -165,6 +165,7 @@ export default function Contact() {
                       </div>
                     </div>
                   </form>
+                  </div>
                 </div>
               </div>
             </div>

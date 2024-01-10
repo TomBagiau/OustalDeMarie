@@ -142,7 +142,7 @@ export default function Maison() {
           </div>
 
           <div className="txtContainer">
-            <h2 className="text-5xl font-bold mb-4">Les + du logement : </h2>
+            <h2 className="text-2xl sm:text-5xl font-bold mb-4">Les + du logement : </h2>
             <div className="txtMainMaison">
               <div className="flex m-6 txt">
                 <BsFillHouseCheckFill  className="iconGreen2"/>

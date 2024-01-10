@@ -27,7 +27,7 @@ export default function Home() {
         <div className="relative w-full">
           <img src="https://images.unsplash.com/photo-1569077251332-3c0293ae7d12?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gîte en ariège" className="object-cover w-full banner"/>
           <div className="absolute inset-0 flex items-center justify-center">
-            <p className="text-4xl text-white font-bold">Votre texte</p>
+            <p className="text-4xl text-white font-bold">Visiter l'ariège avec L'Oustal de Marie</p>
           </div>
         </div>
       </section>

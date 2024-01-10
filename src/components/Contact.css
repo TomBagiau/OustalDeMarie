@@ -36,6 +36,10 @@ section.contact .conctactInfos a:hover {
     color: var(--green-color);
 }
 
+section.contact .leftPart {
+    margin-top: 3rem;
+}
+
 @media screen and (max-width: 768px) {
     .contact {
         width: 90%;
@@ -50,5 +54,13 @@ section.contact .conctactInfos a:hover {
 
     .conctactInfos a {
         margin-top: 1rem;
+    }
+
+    .contactFormText {
+        flex-direction: column-reverse;
+    }
+
+    .rightPart {
+        width: 100%;
     }
 }
