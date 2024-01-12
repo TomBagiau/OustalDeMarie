@@ -76,20 +76,6 @@
     width: 76%;
 }
 
-#clevWidgetAsideSf-lqzeocwv {
-    border-color: var(--green-color) !important;
-}
-
-.cuC5ivSLPptFCr5tpMC5 {
-    background: var(--green-color) !important;
-    border: 1px solid var(--green-color) !important;
-}
-
-.cuC5ivSLPptFCr5tpMC5:hover {
-    background-color: var(--white-color) !important;
-    color: var(--green-color) !important;
-}
-
 @media screen and (max-width: 768px) {
     .maisonSliderContainer {
         flex-direction: column;

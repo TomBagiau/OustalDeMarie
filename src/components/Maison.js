@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Carousel from "./MaisonSlider";
+import Reservation from "./Reservation.js";
 import sanityClient from "../client.js";
 import BlockContent from '@sanity/block-content-to-react';
 import { BsFillHouseCheckFill } from "react-icons/bs";
@@ -141,6 +142,7 @@ export default function Maison() {
       <Helmet>
         <title>Oustal de Marie - Gîte de charme en Ariège | Découvrez notre hébergement</title>
         <meta name="description" content="Découvrez l'Oustal de Marie, un gîte authentique et confortable situé au cœur de l'Ariège. Profitez d'un séjour paisible dans notre hébergement de charme entouré par la nature et proche des sites touristiques." />
+        <script type="text/javascript" src="https://v2.clevacances.com/assets/widget/sdk.js"></script>
       </Helmet>
       <div className="maisonContainer">
         <div className="maisonSliderContainer">
@@ -285,8 +287,7 @@ export default function Maison() {
       </div>
 
       <div ref={reservationRef} id="reserver">
-        <p>Formulaire de réservation bientôt...</p>
-        {/* <div id="resaform" className="appMountPoint-asideBooking mx-auto mt-8 mb-8 p-6" data-hotel_id="36935" data-room_id="65304" data-source="customer"></div> */}
+        <Reservation />
       </div>
 
     </div>
