@@ -1,5 +1,3 @@
-// Dans votre dossier schemas, créez un fichier `carte.js`
-
 export default {
     name: 'carte',
     title: 'Cartes accueil',
