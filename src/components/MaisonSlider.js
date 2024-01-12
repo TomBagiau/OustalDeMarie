@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import { useState } from "react";
 import {
-  BsFillArrowRightCircleFill,
   BsFillArrowLeftCircleFill,
+  BsFillArrowRightCircleFill,
 } from "react-icons/bs";
 
 export default function Carousel({ slides }) {
@@ -26,8 +26,8 @@ export default function Carousel({ slides }) {
           transform: `translateX(-${current * 100}%)`,
         }}
       >
-        {slides.map((s) => {
-          return <img src={s} alt="L'Oustal de Marie - Gite en ariege" />;
+        {slides.map((s, index) => {
+          return <img key={index} src={s} alt="L'Oustal de Marie - Gite en ariege" />;
         })}
       </div>
 

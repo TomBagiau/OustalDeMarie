@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
-import Logo from '../Logo_oustal-de-marie.png'
+import Logo from '../Logo_oustal-de-marie.png';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -14,7 +14,7 @@ export default function Navbar() {
 
     return (
         <nav className="nav relative"> 
-        <NavLink to="/" exact className="nav_brand"><img src={Logo} alt="Logo oustal de Marie" className='logo'></img></NavLink>
+        <NavLink to="/" className="nav_brand"><img src={Logo} alt="Logo oustal de Marie" className='logo'></img></NavLink>
             <ul className={active}>
                 <NavLink to="/" className="nav_item hoverline">Accueil</NavLink>
                 <NavLink to="/la-maison" className="nav_item hoverline">La Maison</NavLink>
