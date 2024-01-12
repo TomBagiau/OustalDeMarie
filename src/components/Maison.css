@@ -48,6 +48,30 @@
     margin-bottom: 2.5rem;
 }
 
+.descriptionMaison {
+    width: 76%;
+    text-align: center;
+}
+
+.descriptionMaison h1,
+.descriptionMaison h2,
+.descriptionMaison h3,
+.descriptionMaison h4 {
+    color: var(--green-color);
+    font-size: 22px;
+}
+
+.descriptionMaison strong {
+    font-weight: bold;
+}
+
+.descriptionMaison p {
+    line-height: 1.9;
+    font-size: 17px;
+    margin-bottom: 1.5rem;
+}
+
+
 #resaform {
     width: 76%;
 }

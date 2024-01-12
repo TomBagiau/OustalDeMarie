@@ -170,12 +170,12 @@ export default function Maison() {
 
         {descriptionMaison &&
           descriptionMaison.map((text, index) => (
-            <div key={index}>
+            <div key={index} className="descriptionMaison mx-auto mt-8 mb-8 p-6">
               <BlockContent blocks={text.body} />
             </div>
           ))}
 
-        <div className="HomeDetails mx-auto mt-8 mb-8 p-6 bg-gray-100 rounded-md">
+        <div className="HomeDetails mx-auto mb-8 p-6 bg-gray-100 rounded-md">
           <h3 className="text-3xl font-semibold mb-8">Détails du Logement</h3>
 
           <div className="detailPart">
@@ -285,7 +285,8 @@ export default function Maison() {
       </div>
 
       <div ref={reservationRef} id="reserver">
-        <div id="resaform" className="appMountPoint-asideBooking mx-auto mt-8 mb-8 p-6" data-hotel_id="36935" data-room_id="65304" data-source="customer"></div>
+        <p>Formulaire de réservation bientôt...</p>
+        {/* <div id="resaform" className="appMountPoint-asideBooking mx-auto mt-8 mb-8 p-6" data-hotel_id="36935" data-room_id="65304" data-source="customer"></div> */}
       </div>
 
     </div>
