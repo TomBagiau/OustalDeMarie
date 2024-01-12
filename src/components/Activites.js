@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import sanityClient from "../client.js";
-import './Activites.css'
+import './Activites.css';
 
 const Activites = () => {
   const [activite, setActivite] = useState([])
@@ -23,7 +23,7 @@ const Activites = () => {
       )
       .then((data) => setActivite(data))
       .catch(console.error);
-  })
+  }, [])
 
   return (
     <div>

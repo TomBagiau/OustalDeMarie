@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import { Button } from "@material-tailwind/react";
+import BlockContent from '@sanity/block-content-to-react';
+import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
+import { BsFillHouseCheckFill } from "react-icons/bs";
+import sanityClient from "../client.js";
+import "./Maison.css";
 import Carousel from "./MaisonSlider";
 import Reservation from "./Reservation.js";
-import sanityClient from "../client.js";
-import BlockContent from '@sanity/block-content-to-react';
-import { BsFillHouseCheckFill } from "react-icons/bs";
-import { Button } from "@material-tailwind/react";
-import "./Maison.css"
 
 export default function Maison() {
 
@@ -28,14 +28,6 @@ export default function Maison() {
 
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://v2.clevacances.com/assets/widget/sdk.js';
-    script.async = true;
-    // Ajout du script au body du document
-    document.body.appendChild(script);
-
-
     // Sanity description maison (about)
     sanityClient
       .fetch(`*[_type == "about"]`)
@@ -78,57 +70,51 @@ export default function Maison() {
      * Sanity Details services
      */
     sanityClient
-    .fetch(
-      `*[_type == "detailsServices"]{
+      .fetch(
+        `*[_type == "detailsServices"]{
         title
       }`
-    )
-    .then((data) => setSerivcesData(data))
-    .catch(console.error);
+      )
+      .then((data) => setSerivcesData(data))
+      .catch(console.error);
 
     /**
      * Sanity Equipements interieurs
      */
     sanityClient
-    .fetch(
-      `*[_type == "equipementsInterieur"]{
+      .fetch(
+        `*[_type == "equipementsInterieur"]{
         title,
         body
       }`
-    )
-    .then((data) => setEquipementInterieurData(data))
-    .catch(console.error);
+      )
+      .then((data) => setEquipementInterieurData(data))
+      .catch(console.error);
 
     /**
      * Sanity A proximité de
      */
     sanityClient
-    .fetch(
-      `*[_type == "detailsProximite"]{
+      .fetch(
+        `*[_type == "detailsProximite"]{
         title,
         value
       }`
-    )
-    .then((data) => setAproxData(data))
-    .catch(console.error);
+      )
+      .then((data) => setAproxData(data))
+      .catch(console.error);
 
     /**
      * Sanity Conditions particulières
      */
     sanityClient
-    .fetch(
-      `*[_type == "conditionsParticulieres"] | order(_createdAt desc){
+      .fetch(
+        `*[_type == "conditionsParticulieres"] | order(_createdAt desc){
         title
       }`
-    )
-    .then((data) => setConditionsParticulieres(data))
-    .catch(console.error);
-
-    return () => {
-      // Nettoyage du script si le composant est démonté
-      document.body.removeChild(script);
-    };
-    
+      )
+      .then((data) => setConditionsParticulieres(data))
+      .catch(console.error);
   }, []);
 
   // Vérifiez si les données des images ont été récupérées avant de rendre le composant
@@ -154,15 +140,15 @@ export default function Maison() {
             <h2 className="text-2xl sm:text-5xl font-bold mb-4">Les + du logement : </h2>
             <div className="txtMainMaison">
               <div className="flex m-6 txt">
-                <BsFillHouseCheckFill  className="iconGreen2"/>
+                <BsFillHouseCheckFill className="iconGreen2" />
                 <p className="ml-6">Idéalement situé pour visiter l'Ariège</p>
               </div>
               <div className="flex m-6 txt">
-                <BsFillHouseCheckFill  className="iconGreen2"/>
+                <BsFillHouseCheckFill className="iconGreen2" />
                 <p className="ml-6">Très confortable, ambiance cocooning</p>
               </div>
               <div className="flex m-6 txt">
-                <BsFillHouseCheckFill  className="iconGreen2"/>
+                <BsFillHouseCheckFill className="iconGreen2" />
                 <p className="ml-6">Wifi, lits faits, linge de toilette fournis</p>
               </div>
             </div>
@@ -203,43 +189,43 @@ export default function Maison() {
 
           <div className="detailPart">
             <h3 className="detailTitle text-2xl font-semibold mb-4">Services</h3>
-              {serivcesData &&
-                serivcesData.reduce((pairs, detail, index) => {
-                  if (index % 2 === 0) pairs.push([]);
-                  pairs[pairs.length - 1].push(detail);
-                  return pairs;
-                }, []).map((pair, pairIndex) => (
-                  <div key={pairIndex}>
-                    <div className="grid grid-cols-2 gap-4">
-                      {pair.map((service, index) => (
-                        <div key={index} className="mb-4 flex items-center">
-                          <p className="font-semibold text-lg">{service.title}</p>
-                        </div>
-                      ))}
-                    </div>
+            {serivcesData &&
+              serivcesData.reduce((pairs, detail, index) => {
+                if (index % 2 === 0) pairs.push([]);
+                pairs[pairs.length - 1].push(detail);
+                return pairs;
+              }, []).map((pair, pairIndex) => (
+                <div key={pairIndex}>
+                  <div className="grid grid-cols-2 gap-4">
+                    {pair.map((service, index) => (
+                      <div key={index} className="mb-4 flex items-center">
+                        <p className="font-semibold text-lg">{service.title}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+              ))}
           </div>
 
           <div className="detailPart">
             <h3 className="detailTitle text-2xl font-semibold mb-4">Équipements intérieur</h3>
-              {equipementInterieurData &&
-                equipementInterieurData.reduce((pairs, detail, index) => {
-                  if (index % 2 === 0) pairs.push([]);
-                  pairs[pairs.length - 1].push(detail);
-                  return pairs;
-                }, []).map((pair, pairIndex) => (
-                  <div key={pairIndex}>
-                    <div className="grid grid-cols-2 gap-4">
-                      {pair.map((equipementInterieur, index) => (
-                        <div key={index}>
-                          <p className="font-semibold text-lg">{equipementInterieur.title} :</p>
-                          <BlockContent blocks={equipementInterieur.body} />
-                        </div>
-                      ))}
-                    </div>
+            {equipementInterieurData &&
+              equipementInterieurData.reduce((pairs, detail, index) => {
+                if (index % 2 === 0) pairs.push([]);
+                pairs[pairs.length - 1].push(detail);
+                return pairs;
+              }, []).map((pair, pairIndex) => (
+                <div key={pairIndex}>
+                  <div className="grid grid-cols-2 gap-4">
+                    {pair.map((equipementInterieur, index) => (
+                      <div key={index}>
+                        <p className="font-semibold text-lg">{equipementInterieur.title} :</p>
+                        <BlockContent blocks={equipementInterieur.body} />
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+              ))}
           </div>
 
           <div className="detailPart">
@@ -265,22 +251,22 @@ export default function Maison() {
 
           <div className="detailPart">
             <h3 className="detailTitle text-2xl font-semibold mb-4">Conditions particulières</h3>
-              {conditionsParticulieres &&
-                conditionsParticulieres.reduce((pairs, detail, index) => {
-                  if (index % 2 === 0) pairs.push([]);
-                  pairs[pairs.length - 1].push(detail);
-                  return pairs;
-                }, []).map((pair, pairIndex) => (
-                  <div key={pairIndex}>
-                    <div className="grid grid-cols-2 gap-4">
-                      {pair.map((service, index) => (
-                        <div key={index} className="mb-4 flex items-center">
-                          <p className="font-semibold text-lg">{service.title}</p>
-                        </div>
-                      ))}
-                    </div>
+            {conditionsParticulieres &&
+              conditionsParticulieres.reduce((pairs, detail, index) => {
+                if (index % 2 === 0) pairs.push([]);
+                pairs[pairs.length - 1].push(detail);
+                return pairs;
+              }, []).map((pair, pairIndex) => (
+                <div key={pairIndex}>
+                  <div className="grid grid-cols-2 gap-4">
+                    {pair.map((service, index) => (
+                      <div key={index} className="mb-4 flex items-center">
+                        <p className="font-semibold text-lg">{service.title}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+              ))}
           </div>
 
         </div>
