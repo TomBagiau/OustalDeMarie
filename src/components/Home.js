@@ -25,11 +25,12 @@ export default function Home() {
       </section>
 
       <section className="homeBaniere">
-        <div className="relative w-full">
-          <img src={banniere} alt="Gîte en ariège" className="object-cover w-full banner"/>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <p className="text-4xl text-white font-bold">Visiter l'ariège avec L'Oustal de Marie</p>
-          </div>
+        <div className="hero-section">
+          <h1 className="hero-title font-bold">Visiter l'Ariège avec L'Oustal de Marie</h1>
+          <p className="hero-text font-bold">
+            L’Oustal de Marie est une maison de village, entièrement rénovée.
+            </p>
+          <p className="hero-text font-bold">Elle est située à Arquizat, l’un des 5 hameaux de Miglos, à 800 m d’altitude au cœur du Parc Naturel Régional des Pyrénées Ariégeoises.</p>
         </div>
       </section>
 
