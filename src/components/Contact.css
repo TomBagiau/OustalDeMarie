@@ -38,6 +38,15 @@ section.contact .conctactInfos a:hover {
 
 section.contact .leftPart {
     margin-top: 3rem;
+    max-width: 50% !important;
+}
+
+#mentions {
+    height: calc(100vh - 8vh);
+}
+
+#mentions a {
+    color: var(--green-color);
 }
 
 @media screen and (max-width: 768px) {
