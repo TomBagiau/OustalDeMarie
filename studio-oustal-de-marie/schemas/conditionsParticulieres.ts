@@ -10,12 +10,11 @@ export default defineType({
             title: 'Conditions particulières',
             type: 'string',
         }),
-    ],
-    orderings: [
-        {
-            title: 'Ordre de création',
-            name: 'createdAtDesc',
-            by: [{ field: '_createdAt', direction: 'desc' }],
-        },
+        defineField({
+            name: 'date',
+            title: 'Date publication',
+            type: 'date',
+            description: 'Affichage sur le site : du plus récent au plus vieux'
+        }),
     ],
 });

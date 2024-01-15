@@ -58,9 +58,10 @@ export default function Maison() {
      */
     sanityClient
       .fetch(
-        `*[_type == "detailsLogement"]{
+        `*[_type == "detailsLogement"] | order(date desc){
           title,
-          value
+          value,
+          date
         }`
       )
       .then((data) => setLeLogementData(data))
@@ -71,8 +72,9 @@ export default function Maison() {
      */
     sanityClient
       .fetch(
-        `*[_type == "detailsServices"]{
-        title
+        `*[_type == "detailsServices"] | order(date desc){
+        title,
+        date
       }`
       )
       .then((data) => setSerivcesData(data))
@@ -83,7 +85,7 @@ export default function Maison() {
      */
     sanityClient
       .fetch(
-        `*[_type == "equipementsInterieur"]{
+        `*[_type == "equipementsInterieur"] | order(date desc){
         title,
         body
       }`
@@ -109,8 +111,9 @@ export default function Maison() {
      */
     sanityClient
       .fetch(
-        `*[_type == "conditionsParticulieres"] | order(_createdAt desc){
-        title
+        `*[_type == "conditionsParticulieres"] | order(date desc){
+        title,
+        date
       }`
       )
       .then((data) => setConditionsParticulieres(data))

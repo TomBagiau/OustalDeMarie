@@ -15,5 +15,11 @@ export default defineType({
             title: 'Valeur',
             type: 'string',
         }),
+        defineField({
+            name: 'date',
+            title: 'Date publication',
+            type: 'date',
+            description: 'Affichage sur le site : du plus récent au plus vieux'
+        }),
     ],
 })
