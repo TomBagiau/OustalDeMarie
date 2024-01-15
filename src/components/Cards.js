@@ -39,7 +39,7 @@ export default function Cards() {
     <div className="flex flex-wrap justify-around items-center mx-auto center">
     {cardData &&
     cardData.map((card, index) => (
-      <Card key={index} className="sm:w-1/2 mt-5 md:w-1/2 lg:w-1/4 xl:w-1/4 my-2 mx-2 mt-10 cart text-white">
+      <Card key={index} className="sm:w-1/2 md:w-1/2 lg:w-1/4 xl:w-1/4 my-2 mx-2 mt-10 cart text-white">
         <CardHeader color="blue-gray" className="relative h-72">
           <img
             src={card.image.asset.url} // Accédez à l'URL de l'image via card.image.asset.url
