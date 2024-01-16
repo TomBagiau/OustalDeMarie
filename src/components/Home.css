@@ -46,7 +46,7 @@ html {
     position: relative;
     height: 400px;
     /* ajustez la hauteur selon vos besoins */
-    background-image: url('../img/accueil-oustal-de-marie.JPG');
+    background-image: url('../img/accueil-oustal-de-marie2.JPG');
     /* remplacez 'votre-image.jpg' par le chemin de votre image */
     background-size: cover;
     background-position: center;
@@ -56,7 +56,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0.9;
+    /* opacity: 0.9; */
 }
 
 .hero-title {

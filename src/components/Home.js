@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import background from "../img/home_background.JPG"
-import banniere from "../img/accueil-oustal-de-marie.JPG"
 import Cards from "./Cards";
 import Maps from "./Maps";
 import "./Home.css"
