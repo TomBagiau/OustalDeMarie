@@ -53,10 +53,17 @@
     text-align: center;
 }
 
-.descriptionMaison h1,
-.descriptionMaison h2,
-.descriptionMaison h3,
-.descriptionMaison h4 {
+.descriptionMaison h1 {
+    color: var(--green-color);
+    font-size: 30px;
+}
+
+.descriptionMaison h2 {
+    color: var(--green-color);
+    font-size: 26px;
+}
+
+.descriptionMaison h3 {
     color: var(--green-color);
     font-size: 22px;
 }

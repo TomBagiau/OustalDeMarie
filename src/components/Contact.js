@@ -72,7 +72,7 @@ export default function Contact() {
                   ))}
               </div>
               
-              <div className="w-2/3 pl-4">
+              <div className="formcontainer w-2/3 pl-4">
                 <div className="rightPart">
                   <div className="flex flex-col text-center w-full mb-12">
                     <h1 className="contactTitle font-medium mb-4">

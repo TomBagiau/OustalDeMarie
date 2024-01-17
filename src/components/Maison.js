@@ -211,7 +211,7 @@ export default function Maison() {
           </div>
 
           <div className="detailPart">
-            <h3 className="detailTitle text-2xl font-semibold mb-4">Équipements intérieur</h3>
+            <h3 className="detailTitle text-2xl font-semibold mb-4">Équipements intérieurs</h3>
             {equipementInterieurData &&
               equipementInterieurData.reduce((pairs, detail, index) => {
                 if (index % 2 === 0) pairs.push([]);

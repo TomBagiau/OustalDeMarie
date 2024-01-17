@@ -37,12 +37,8 @@ section.contact .conctactInfos a:hover {
 }
 
 section.contact .leftPart {
-    margin-top: 3rem;
-    max-width: 50% !important;
-}
-
-#mentions {
-    height: calc(100vh - 8vh);
+    margin-top: 9rem;
+    max-width: 45%;
 }
 
 #mentions a {
@@ -71,5 +67,14 @@ section.contact .leftPart {
 
     .rightPart {
         width: 100%;
+    }
+
+    .leftPart {
+        max-width: 100% !important;
+    }
+
+    .formcontainer {
+        width: 100%;
+        padding: 0;
     }
 }
