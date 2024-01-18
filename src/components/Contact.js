@@ -161,7 +161,7 @@ export default function Contact() {
                       )}
                       <div className="conctactInfos p-2 w-full pt-8 mt-8 border-t text-gray-900 text-center">
                         <a href="mailto:contact@oustaldemarie.fr" className="mx-8">contact@oustaldemarie.fr</a>
-                        <a href="tel:+33651377026" className="mx-8">06 12 34 56 78</a>
+                        <a href="tel:+686814117" className="mx-8">06 86 81 41 17</a>
                       </div>
                     </div>
                   </form>
