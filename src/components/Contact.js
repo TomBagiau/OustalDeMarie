@@ -12,46 +12,61 @@ export default function Contact() {
   const [tel, setTel] = useState('');
   const [message, setMessage] = useState('');
   const [messageSent, setMessageSent] = useState('');
+  const [captchaNumber1, setCaptchaNumber1] = useState(0);
+  const [captchaNumber2, setCaptchaNumber2] = useState(0);
+  const [captchaAnswer, setCaptchaAnswer] = useState('');
 
   const [contactText, setContactText] = useState([]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Utilisation des variables d'environnement pour emailJS
-    const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-    const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.REACT_APP_EMAILJS_USER_ID;
-
-    //Object contains dynamic template params
-    const  templateParams = {
-      from_name: name,
-      from_email: email,
-      from_tel: tel,
-      message: message
-    }
-
-    //Send email using emailJS
-    emailjs.send(serviceID, templateID, templateParams, publicKey)
-      .then((response) => {
-        setName('')
-        setEmail('')
-        setTel('')
-        setMessage('')
-        setMessageSent(true)
-      })
-      .catch((error) => {
-        console.error('Erreur lors de l\'envoi du formulaire :', error);
-      });
-  }
-
   useEffect(() => {
+    // Generate random numbers for captcha
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    setCaptchaNumber1(num1);
+    setCaptchaNumber2(num2);
+    
     // Sanity contactText
     sanityClient
       .fetch(`*[_type == "contactText"]`)
       .then((data) => setContactText(data))
       .catch(console.error);
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Check captcha answer
+    const answer = parseInt(captchaAnswer);
+    if (answer === captchaNumber1 + captchaNumber2) {
+      // Utilisation des variables d'environnement pour emailJS
+      const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.REACT_APP_EMAILJS_USER_ID;
+
+      //Object contains dynamic template params
+      const  templateParams = {
+        from_name: name,
+        from_email: email,
+        from_tel: tel,
+        message: message
+      }
+
+      //Send email using emailJS
+      emailjs.send(serviceID, templateID, templateParams, publicKey)
+        .then((response) => {
+          setName('')
+          setEmail('')
+          setTel('')
+          setMessage('')
+          setMessageSent(true)
+        })
+        .catch((error) => {
+          console.error('Erreur lors de l\'envoi du formulaire :', error);
+        });
+    } else {
+      alert("La réponse au captcha est incorrecte. Veuillez réessayer.");
+    }
+  }
 
   return (
     <div>
@@ -148,6 +163,19 @@ export default function Contact() {
                             className="w-full bg-gray-100 rounded border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-6 transition-colors duration-200 ease-in-out"
                           ></textarea>
                         </div>
+                      </div>
+                      <div className="p-2 w-full">
+                        <label htmlFor="captcha" className="leading-7 text-lg text-gray-600">
+                          Combien font {captchaNumber1} + {captchaNumber2} ?
+                        </label>
+                        <input
+                          type="number"
+                          id="captcha"
+                          name="captcha"
+                          value={captchaAnswer}
+                          onChange={(e) => setCaptchaAnswer(e.target.value)}
+                          className="w-full bg-gray-100 rounded border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        />
                       </div>
                       <div className="p-2 w-full">
                         <button className="flex mx-auto py-2 px-8 focus:outline-none rounded text-lg" type="submit">
