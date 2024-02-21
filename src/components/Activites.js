@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import sanityClient from "../client.js";
+import BlockContent from '@sanity/block-content-to-react';
 import './Activites.css';
 
 const Activites = () => {
@@ -18,7 +19,7 @@ const Activites = () => {
           },
           title,
           url,
-          description
+          body
         }`
       )
       .then((data) => setActivite(data))
@@ -45,7 +46,7 @@ const Activites = () => {
 
             <div className="flex flex-col justify-center items-center md:w-1/2 p-4">
               <h2 className="text-2xl font-bold mb-4">{activite.title}</h2>
-              <p>{activite.description}</p>
+              <p><BlockContent blocks={activite.body} /></p>
               
               {activite.url && (
                   <a href={activite.url} target="_blank" rel="noopener noreferrer">

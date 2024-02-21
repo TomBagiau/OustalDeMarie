@@ -8,6 +8,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import BlockContent from '@sanity/block-content-to-react';
 import { Link } from 'react-router-dom';
 import "./Home.css";
 
@@ -37,7 +38,7 @@ export default function Cards() {
               },
           },
           titre,
-          description,
+          body,
           lien
         }`
       )
@@ -61,15 +62,7 @@ export default function Cards() {
                 {card.titre}
               </Typography>
               <Typography>
-                {showFullTextArray[index] || card.description.length <= characterLimit
-                  ? card.description
-                  : `${card.description.slice(0, characterLimit)}...`}
-                {card.description.length > characterLimit && (
-                  // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                  <a className="cursor-pointer readmore" onClick={() => handleToggleText(index)}>
-                    {showFullTextArray[index] ? ' Lire moins' : ' Lire plus'}
-                  </a>
-                )}
+                <BlockContent blocks={card.body} />
               </Typography>
             </CardBody>
             <CardFooter className="pt-0">

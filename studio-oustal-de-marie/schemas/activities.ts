@@ -19,10 +19,9 @@ export default defineType({
             type: 'string',
         }),
         defineField({
-            name: 'description',
-            title: 'Description',
-            type: 'text',
-            description: 'Description de l\'activité',
+            name: 'body',
+            title: 'Body',
+            type: 'blockContent',
         }),
         defineField({
             name: 'url',
